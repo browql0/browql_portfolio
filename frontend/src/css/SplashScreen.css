@@ -1,0 +1,265 @@
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  z-index: 9999;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.splash-inner {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in-out both;
+}
+
+.splash-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.splash-title span {
+  color: var(--accent);
+}
+
+.splash-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  color: var(--accent);
+  transition: transform 0.2s, color 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color: var(--accent-dark);
+}
+
+.splash-link {
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--accent);
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  margin: 0 auto;
+  animation: typing 3s steps(20, end) forwards;
+}
+
+.splash-hint {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14ch;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.typed-box {
+  display: inline-block;
+  font-family: monospace;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--accent-dark);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  box-shadow: 0 0 12px rgba(79, 143, 240, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  min-width: 240px;
+}
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-down {
+  animation: slideInDown 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.animate-slide-down,
+.animate-slide-left,
+.animate-slide-right,
+.animate-fade-up {
+  opacity: 0;
+  animation-fill-mode: both;
+}
+.typed-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.typed-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent);
+}
+.icon {
+  color: var(--accent);
+  transition: transform 0.2s, color 0.3s, text-shadow 0.3s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color: var(--accent);
+  text-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent-dark);
+}
+.blur-text {
+  font-size: 2.25rem; /* équivalent à text-2xl */
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 2rem;
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: blurIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes blurIn {
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.splash-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .splash-inner {
+    padding: 1rem;
+  }
+
+  .blur-text {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .splash-icons {
+    gap: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .typed-box {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    min-width: auto;
+    max-width: 80%;
+  }
+
+  .splash-title {
+    font-size: 1.75rem;
+  }
+
+  .splash-hint {
+    font-size: 0.65rem;
+  }
+
+  .icon {
+    font-size: 1.75rem;
+  }
+}

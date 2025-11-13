@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Website Development",
+    "description": "Professional website development with modern technologies and responsive design"
+  },
+  {
+    "id": 2,
+    "title": "Mobile App Development",
+    "description": "Custom mobile applications for iOS and Android platforms"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design",
+    "description": "User-centered design solutions to enhance user experience and engagement"
+  },
+  {
+    "id": 4,
+    "title": "SEO Optimization",
+    "description": "Improve your website's visibility and ranking on search engines"
+  }
+]

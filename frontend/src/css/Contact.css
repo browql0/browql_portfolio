@@ -1,0 +1,118 @@
+.contact-container {
+  background: linear-gradient(135deg, #1a1f2b 0%, #10141d 100%);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  max-width: 650px;
+  margin: 4rem auto;
+  box-shadow: 0 0 50px rgba(79, 143, 240, 0.25);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  color: var(--text-sub);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group:hover {
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 10px rgba(79, 143, 240, 0.3);
+}
+
+.input-group .icon {
+  margin-right: 0.75rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.input-group input,
+.input-group textarea {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.input-group textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.contact-form button:active {
+  transform: scale(0.97);
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  color: var(--success);
+}
+
+.form-message.error {
+  color: var(--error);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+}

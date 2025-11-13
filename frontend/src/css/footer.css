@@ -1,0 +1,72 @@
+.footer {
+  background-color: var(--surface);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(26, 31, 43, 0.5); /* var(--secondary) avec opacité pour un shadow doux */
+  color: var(--text-main);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid rgba(148, 163, 184, 0.3); /* var(--text-sub) en bordure légère */
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  color: var(--accent);
+  user-select: none;
+}
+
+.footer-brand p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  user-select: none;
+}
+
+.footer-socials a {
+  color: var(--text-sub);
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-socials a:first-child {
+  margin-left: 0;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus {
+  color: var(--accent);
+  transform: scale(1.2);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-socials {
+    margin-top: 1rem;
+  }
+
+  .footer-socials a {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+}

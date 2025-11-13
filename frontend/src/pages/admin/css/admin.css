@@ -1,0 +1,202 @@
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1.5rem 1rem 2rem; /* padding-bottom pour le logout */
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  color: var(--text-sub);
+  border: none;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+  margin-bottom: 0.8rem; /* espace entre boutons */
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.sidebar button.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+/* Séparateur avant logout */
+.sidebar-separator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
+}
+
+/* Bouton Déconnexion */
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   CONTENU PRINCIPAL
+========================= */
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  background: var(--bg);
+  overflow-y: auto;
+}
+
+.admin-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-content p {
+  color: var(--text-sub);
+}
+
+/* =========================
+   CARDS (Overview)
+========================= */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--text-sub);
+}
+
+.card-icon {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   GRAPH
+========================= */
+.overview-graph {
+  margin-top: 2rem;
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;       /* largeur maximale */
+  max-width: 500px;  /* limite la taille sur grand écran */
+  height: 250px;     /* réduit la hauteur */
+}
+
+/* =========================
+   RESPONSIVE (mobile)
+========================= */
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    min-height: auto;
+    padding: 0.5rem;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar button {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+
+  .sidebar-separator {
+    display: none;
+  }
+
+  .logout-btn {
+    flex-direction: column;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .admin-content {
+    padding: 1rem;
+  }
+}

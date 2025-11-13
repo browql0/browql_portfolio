@@ -1,0 +1,138 @@
+/* Dashboard */
+.orders-dashboard {
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-input, select {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background: var(--surface);
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(79, 143, 240, 0.4);
+}
+
+/* Orders List & Cards */
+.orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.order-card {
+  position: relative;
+  background: var(--surface);
+  color: var(--text-main);
+  padding: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.order-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  background: #252b3c;
+}
+
+.order-card h3 { margin:0 0 6px 0; font-weight:600; }
+.order-card p { margin:2px 0; font-size:0.9rem; color: var(--text-sub); }
+
+.order-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* Status colors */
+.order-card.status-En-cours .order-status { background: var(--accent); }
+.order-card.status-Terminé .order-status { background: var(--success); }
+.order-card.status-Annulé .order-status { background: var(--error); }
+
+.no-orders { text-align:center; color: var(--text-sub); font-style:italic; grid-column:1/-1; }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: var(--surface);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn.active, .page-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.65); display:flex; justify-content:center; align-items:center;
+  animation: fadeIn 0.25s ease; z-index:1000;
+}
+
+.modal {
+  background: var(--surface); padding:25px; border-radius:16px;
+  width:400px; max-width:90%; box-shadow:0 8px 25px rgba(0,0,0,0.5);
+  animation: slideUp 0.3s ease; position:relative;
+}
+
+.modal h2 { margin-top:0; }
+.modal-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:20px; flex-wrap:wrap; }
+.delete-btn, .cancel-btn, .modal-actions select {
+  border:none; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:500;
+  transition:all 0.2s ease; background: var(--surface); color: var(--text-main);
+}
+.delete-btn { background: var(--error); color:white; }
+.delete-btn:hover { opacity:0.85; }
+.cancel-btn { background:#444; color:white; }
+.cancel-btn:hover { opacity:0.85; }
+.modal-actions select { border:1px solid #444; background: var(--surface); }
+.modal-actions select:focus { border-color: var(--accent); box-shadow:0 0 6px rgba(79,143,240,0.4); }
+
+/* Animations */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideUp { from {opacity:0; transform:translateY(15px);} to {opacity:1; transform:translateY(0);} }
