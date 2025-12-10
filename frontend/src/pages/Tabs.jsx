@@ -13,6 +13,9 @@ import NextIcon from '@icons/next.svg?react';
 import TailIcon from '@icons/tail.svg?react';
 import GitIcon from '@icons/git.svg?react';
 import VscIcon from '@icons/vsc.svg?react';
+import SqlIcon from '@icons/sql.svg?react';
+import MysqlIcon from '@icons/mysql.svg?react';
+import Py from '@icons/py.svg?react';
 
 import { Code, Award, Layers } from 'lucide-react';
 
@@ -32,7 +35,7 @@ export default function TabSection() {
   // Calcul direction animation (slide-left ou slide-right)
   const direction =
     tabs.findIndex((tab) => tab.id === activeTab) >
-    tabs.findIndex((tab) => tab.id === previousTab)
+      tabs.findIndex((tab) => tab.id === previousTab)
       ? 'left'
       : 'right';
 
@@ -148,6 +151,19 @@ function ProjectsContent() {
       image: "./img/porto.png",
       github: "https://github.com/browql0/portfolio",
       demo: "https://browql.unaux.com",
+    },
+    {
+      title: "Finance app",
+      description: "A student friendly finance app that helps you tracking all of your money.",
+      image: "./img/fin.png",
+      github: "https://github.com/browql0/browql_finance",
+      demo: "https://browql.netlify.app",
+    },
+    {
+      title: "bql study",
+      description: "help students to study and organize their notes files pictures and pass quiz",
+      image: "./img/bql.png",
+      demo: "https://bql-study.vercel.app",
     },
     {
       title: "Streaming website",
@@ -302,8 +318,10 @@ function TechStackContent() {
         <h3>Backend</h3>
         <div className="stack-grid">
           <Badge label="Node.js" Icon={NodeIcon} />
+          <Badge label="JavaScript" Icon={JavascriptIcon} />
           <Badge label="Express" Icon={ExpressIcon} />
           <Badge label="Next.js" Icon={NextIcon} />
+          <Badge label="Python" Icon={Py} />
         </div>
       </div>
       <div className="stack-divider" />
@@ -314,6 +332,7 @@ function TechStackContent() {
           <Badge label="MongoDB" Icon={MongoIcon} />
           <Badge label="Git" Icon={GitIcon} />
           <Badge label="GitHub" Icon={GithubIcon} />
+          <Badge label="MySQL" Icon={MysqlIcon} />
         </div>
       </div>
     </div>

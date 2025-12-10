@@ -14,7 +14,7 @@ import Pricing from "./pages/Pricing";
 import "./css/SplashScreen.css";
 import "./index.css";
 import { useEffect } from "react";
-import axios from "axios";
+
 
 function LayoutWithParticles({ children }) {
   // Splash screen
@@ -27,24 +27,7 @@ function LayoutWithParticles({ children }) {
   };
 
 
-useEffect(() => {
-  const token = localStorage.getItem("adminToken");
-  if (token) {
-    axios
-      .get("http://localhost:5000/me", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then(() => {
-        // ✅ Token valide → affiche dashboard
-        setShowDashboard(true);
-      })
-      .catch(() => {
-        // ❌ Token expiré → supprime et affiche modal
-        localStorage.removeItem("adminToken");
-        setShowDashboard(false);
-      });
-  }
-}, []);
+
 
 
   return (

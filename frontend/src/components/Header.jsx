@@ -26,9 +26,6 @@ const Header = () => {
           <Link to="/" onClick={handleLinkClick}>
             Home
           </Link>
-          <Link to="/pricing" onClick={handleLinkClick}>
-            Offres
-          </Link>
         </nav>
 
         {/* ACTIONS */}

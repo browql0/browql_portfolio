@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { User, Lock, Timer, X } from "lucide-react";
-import axios from "axios";
+
 import "../css/AdminLoginModal.css";
 
 const AdminLoginModal = ({ isOpen, onClose, onSuccess }) => {
@@ -14,26 +14,10 @@ const AdminLoginModal = ({ isOpen, onClose, onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-        duration,
-      });
-
-      // ✅ Si login réussi → stocker le token en localStorage
-      localStorage.setItem("adminToken", res.data.token);
-
-      // ✅ Appeler la callback (ex: redirection vers dashboard)
-      onSuccess();
-
-    } catch (err) {
-      console.error(err.response?.data?.message || err.message);
-
-      // Ajout du "shake"
-      setErrorShake(true);
-      setTimeout(() => setErrorShake(false), 400);
-    }
+    // MOCK LOGIN for frontend only
+    console.log("Mock login success (backend removed)");
+    localStorage.setItem("adminToken", "mock-token-" + Date.now());
+    onSuccess();
   };
 
   return (
