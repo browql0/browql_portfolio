@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 
 import SplashScreen from "./components/SplashScreen";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import Particles from "./components/Particles";
 import CustomCursor from "./components/CustomCursor";
 import Admin from "./pages/admin/admin";
