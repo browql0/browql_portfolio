@@ -5,12 +5,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import SplashScreen from "./components/SplashScreen";
 import Header from "./components/Header";
 import Footer from "./components/footer";
-import Particles from "./components/Particles";
+import Particles from "./components/particles";
 import CustomCursor from "./components/CustomCursor";
-import Admin from "./pages/admin/admin";
 
-import Home from "./pages/Home";
-import Pricing from "./pages/Pricing";
+import Home from "./pages/home";
+import Pricing from "./pages/pricing";
 import "./css/SplashScreen.css";
 import "./index.css";
 import { useEffect } from "react";
@@ -86,7 +85,6 @@ export default function App() {
         />
 
         {/* 🔥 Page Admin (indépendante du layout public) */}
-        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   );
